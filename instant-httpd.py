@@ -1,8 +1,9 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 import socket
 import sys
-from http.server import SimpleHTTPRequestHandler, HTTPServer
+from BaseHTTPServer import HTTPServer
+from SimpleHTTPServer import SimpleHTTPRequestHandler
 
 def main():
     try:
@@ -21,7 +22,7 @@ def main():
                     continue
                 break
 
-        print('Listening on port {0}'.format(port))
+        print 'Listening on port ' + str(port)
 
         server.serve_forever()
     except KeyboardInterrupt:
